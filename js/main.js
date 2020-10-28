@@ -11,7 +11,9 @@ const columns = canvas.height / scale
 let snake
 let fruit
 
+
 (function setup() {
+    let second = 130
     snake = new Snake()
     fruit = new Fruit()
     fruit.randomLocation()
@@ -21,7 +23,15 @@ let fruit
         fruit.draw()
         snake.draw()
         snake.update()
-    }, 100)
+
+        if (snake.eat()){
+            console.log("EATING")
+            fruit.randomLocation()
+            second -= 7
+            console.log(second)
+        }
+    }, second)
+    
 }())
 
 
@@ -30,4 +40,5 @@ window.addEventListener('keydown', evnt => {
     const direction = evnt.key.replace("Arrow", "")
     // console.log(direction)
     snake.setDirection(direction)
+    
 })
