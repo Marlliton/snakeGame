@@ -9,12 +9,16 @@ const rows = canvas.width / scale
 const columns = canvas.height / scale
 
 let snake
+let fruit
 
 (function setup() {
     snake = new Snake()
+    fruit = new Fruit()
+    fruit.randomLocation()
 
     window.setInterval(() => {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
+        fruit.draw()
         snake.draw()
         snake.update()
     }, 100)
