@@ -13,7 +13,7 @@ let fruit
 
 
 (function setup() {
-    let second = 130
+    
     snake = new Snake()
     fruit = new Fruit()
     fruit.randomLocation()
@@ -27,10 +27,12 @@ let fruit
         if (snake.eat()){
             console.log("EATING")
             fruit.randomLocation()
-            second -= 7
-            console.log(second)
         }
-    }, second)
+
+        if (snake.detectCollision()) {
+            console.log(snake)
+        }
+    }, 100)
     
 }())
 
