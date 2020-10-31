@@ -13,7 +13,7 @@ let fruit
 
 
 (function setup() {
-    
+
     snake = new Snake()
     fruit = new Fruit()
     fruit.randomLocation()
@@ -24,16 +24,17 @@ let fruit
         snake.draw()
         snake.update()
 
-        if (snake.eat()){
+        if (snake.eat()) {
             console.log("EATING")
             fruit.randomLocation()
         }
-
         if (snake.detectCollision()) {
+            alert("Collide!")
             console.log(snake)
         }
+
     }, 100)
-    
+
 }())
 
 
@@ -42,5 +43,5 @@ window.addEventListener('keydown', evnt => {
     const direction = evnt.key.replace("Arrow", "")
     // console.log(direction)
     snake.setDirection(direction)
-    
+
 })
