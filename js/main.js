@@ -29,8 +29,7 @@ let fruit
             fruit.randomLocation()
         }
         if (snake.detectCollision()) {
-            alert("Collide!")
-            console.log(snake)
+            document.location.reload(true)
         }
 
     }, 100)
