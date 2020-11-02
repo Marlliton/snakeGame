@@ -11,7 +11,7 @@ const columns = canvas.height / scale
 let snake
 let fruit
 
-
+// Função que cria a cobra e a fruta, e chama funções de controle de colisão e de posicionamento.
 (function setup() {
 
     snake = new Snake()
@@ -25,7 +25,7 @@ let fruit
         snake.update()
 
         if (snake.eat()) {
-            console.log("EATING")
+            // console.log("EATING")
             fruit.randomLocation()
         }
         if (snake.detectCollision()) {
@@ -37,7 +37,7 @@ let fruit
 }())
 
 
-
+// Função que dispara os eventos do teclado para detectar as tecla clicadas.
 window.addEventListener('keydown', evnt => {
     const direction = evnt.key.replace("Arrow", "")
     // console.log(direction)

@@ -1,3 +1,4 @@
+// Construção da cobra propriamente dita
 function Snake() {
     this.x = 0
     this.y = 0
@@ -6,6 +7,7 @@ function Snake() {
     this.total = 0
     this.tail = []
 
+    // Desenhando a cobra no gride da aplicação
     this.draw = function () {
         ctx.fillStyle = '#000'
         ctx.fillRect(this.x, this.y, scale, scale)
@@ -44,6 +46,7 @@ function Snake() {
         }
     }
 
+    // Direção X e Y 
     this.setDirection = function (direction) {
         switch (direction) {
             case 'Up':
@@ -65,6 +68,7 @@ function Snake() {
         }
     }
 
+    // Verifica colisão com a fruta
     this.eat = function () {
         if (this.x === fruit.x && this.y === fruit.y) {
             this.total++
@@ -73,6 +77,7 @@ function Snake() {
         return false
     }
 
+    // Verifica colisão com a própria cobra
     this.detectCollision = function () {
         for (let i = 0; i < this.tail.length; i++) {
             if (this.x == this.tail[i].x && this.y == this.tail[i].y) {
