@@ -23,7 +23,7 @@ function Snake() {
         this.tail[this.total - 1] = {
             x: this.x,
             y: this.y
-        
+
         }
 
 
@@ -74,11 +74,13 @@ function Snake() {
     }
 
     this.detectCollision = function () {
-        for (let i = 2; i < this.tail.length; i++) {
-            if (this.tail[0].x === this.tail[i].x && this.tail[0].y === this.tail[i].y) {
+        for (let i = 0; i < this.tail.length; i++) {
+            if (this.x == this.tail[i].x && this.y == this.tail[i].y) {
+                this.tail = [];
+                // this.update()
                 return true
             }
         }
-        return false
     }
+
 }
