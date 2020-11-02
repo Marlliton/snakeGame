@@ -74,6 +74,7 @@ function Snake() {
             this.total++
             return true
         }
+        const score = document.querySelector('.score').innerHTML = "Score: " + this.total
         return false
     }
 

@@ -25,14 +25,15 @@ let fruit
         snake.update()
 
         if (snake.eat()) {
-            // console.log("EATING")
             fruit.randomLocation()
+            
         }
         if (snake.detectCollision()) {
+            alert(`Sua pontuação ${snake.total}` )
             document.location.reload(true)
         }
 
-    }, 100)
+    }, 60)
 
 }())
 
