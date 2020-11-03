@@ -33,7 +33,7 @@ let fruit
             document.location.reload(true)
         }
 
-    }, 90)
+    }, 130)
 
 }())
 
